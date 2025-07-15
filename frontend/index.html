@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoas</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro de Pessoas</h1>
+        </header>
+        
+        <main>
+            <!-- Formulário de Cadastro -->
+            <section class="form-section">
+                <h2>Novo Cadastro</h2>
+                <form id="form-cadastro" class="pure-form pure-form-stacked">
+                    <fieldset>
+                        <div class="pure-g">
+                            <div class="pure-u-1">
+                                <label for="nome">Nome Completo *</label>
+                                <input type="text" id="nome" name="nome" class="pure-input-1" required>
+                                <span class="error-message" id="erro-nome"></span>
+                            </div>
+                            
+                            <div class="pure-u-1-2">
+                                <label for="dataNascimento">Data de Nascimento *</label>
+                                <input type="date" id="dataNascimento" name="dataNascimento" class="pure-input-1" required>
+                                <span class="error-message" id="erro-data"></span>
+                            </div>
+                            
+                            <div class="pure-u-1-2">
+                                <label for="cpf">CPF *</label>
+                                <input type="text" id="cpf" name="cpf" class="pure-input-1" placeholder="XXX.XXX.XXX-XX" required>
+                                <span class="error-message" id="erro-cpf"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="pure-button pure-button-primary">
+                                Cadastrar
+                            </button>
+                            <button type="reset" class="pure-button">
+                                Limpar
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            
+            <!-- Lista de Pessoas -->
+            <section class="list-section">
+                <h2>Pessoas Cadastradas</h2>
+                <button id="btn-atualizar" class="pure-button">Atualizar Lista</button>
+                
+                <div id="loading" class="loading" style="display: none;">
+                    Carregando...
+                </div>
+                
+                <div id="lista-pessoas" class="pessoas-container">
+                    <!-- Lista será preenchida via JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Modal de Sucesso -->
+    <div id="modal-sucesso" class="modal">
+        <div class="modal-content">
+            <h3>Sucesso!</h3>
+            <p>Pessoa cadastrada com sucesso!</p>
+            <button id="btn-fechar-modal" class="pure-button pure-button-primary">OK</button>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
