@@ -108,8 +108,8 @@ sudo apt install -y curl jq git
 ### 1. Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/sistema-cadastro-pessoas.git
-cd sistema-cadastro-pessoas
+git clone https://github.com/FelipeGMUI/Projeto_Cadastro.git
+cd Projeto_Cadastro
 ```
 
 ### 2. Configurar PostgreSQL
@@ -120,10 +120,10 @@ sudo systemctl start postgresql
 sudo systemctl enable postgresql
 
 # Criar usuário e banco de dados
-sudo -u postgres createuser -P cadastro
+sudo -u postgres createuser -P dev_user
 # Digite a senha: senha123
 
-sudo -u postgres createdb -O cadastro cadastro_pessoas
+sudo -u postgres createdb -O dev_user cadastro_pessoas
 ```
 
 ### 3. Criar Estrutura do Banco
@@ -398,47 +398,4 @@ sudo -u postgres psql cadastro_pessoas < backup.sql
 
 # Compilar e fazer deploy rápido
 cd backend/ && mvn clean package && sudo systemctl stop tomcat9 && sudo cp target/cadastro-pessoas-1.0.0.war /var/lib/tomcat9/webapps/api.war && sudo systemctl start tomcat9
-```
 
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
-5. Abra um Pull Request
-
-### Diretrizes de Contribuição
-
-- Siga os padrões de código existentes
-- Adicione testes para novas funcionalidades
-- Atualize a documentação quando necessário
-- Use mensagens de commit descritivas
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👥 Autores
-
-- **Seu Nome** - *Desenvolvimento inicial* - [seu-usuario](https://github.com/seu-usuario)
-
-## 🙏 Agradecimentos
-
-- Comunidade Spring Boot
-- Documentação do PostgreSQL
-- Stack Overflow pela ajuda com problemas específicos
-
----
-
-## 📞 Suporte
-
-Em caso de dúvidas ou problemas:
-
-- 📧 Email: seu-email@example.com
-- 🐛 Issues: [GitHub Issues](https://github.com/seu-usuario/sistema-cadastro-pessoas/issues)
-- 📖 Wiki: [GitHub Wiki](https://github.com/seu-usuario/sistema-cadastro-pessoas/wiki)
-
----
-
-⭐ **Se este projeto te ajudou, considere dar uma estrela!** ⭐
